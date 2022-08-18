@@ -1,0 +1,9 @@
+# Introduction
+
+## Tangent and Secant
+A **tangent** line just touches a curve at a point, matching the curve's slope there.
+A **secant** line intersects two or more points on a curve.  
+
+```{r secant, echo=FALSE,fig.cap='A secant and Tangent',out.width="80%", fig.align='center'}
+knitr::include_graphics(rep("images/secant.png"))
+```
