@@ -1,0 +1,237 @@
+
+# Homogeneous Function
+
+The function $f(x,y)$; if it can be expressed by writing $x = kx$ and $y = ky$ to form a function $f(kx,ky)= k^{2} f(x,y)$, such that constant $k$ can be taken as the $n^{th}$ power of exponent , it is called as homogeneous function of degree $n$. Here $n$ is called as the *degree of homogeneity*.
+
+> Example 3.1: Verify $f(x,y)$ is a homogeneous function.
+
+1. $f(x,y) = x^{2} - 2xy$
+     
+   $f(kx,ky)  = (kx)^{2}- 2(kx)(ky)$  
+   = $k^{2} x^{2} - 2k^{2}xy$  
+   = $k^{2}(x^{2}- 2xy)$  
+   = $k^{2} f(x,y)$  
+
+Homogeneous function of degree 2.
+
+2. $f(x,y)= 3x+4y$
+
+   $f(kx,ky)= 3(kx)+4(ky)$  
+   $= 3kx+4ky$  
+   $= k(3x+4y)$  
+   $= k f(x,y)$  
+   
+   Homogeneous function of degree 1.
+
+3. $f(x,y)= tan(x/y)$
+   
+   $f(kx,ky)= tan(kx/ky)$  
+   
+   $= k^{0} tan(x/y)$  
+   $= k^{0} f(x,y)$  
+   
+   Homogeneous function of degree 0.
+
+4. $f(x,y)= x log y+ 5xy$
+
+   $f(kx,ky)=kx. log ky+ 5 kx. ky$  
+   $= kx. log y+ 5k^{2} xy$  
+   
+   Not a  Homogeneous function
+
+5. $f(x,y)= 2 sin x+ cos y$  
+
+   $f(kx,ky)=2 sin kx+ cos ky$  
+   
+   Not a  Homogeneous function
+   
+> Problem 3.1: Verify wether the function below is homogenous  
+
+$f(x,y)= x^{3}+ 2x^{2}y- 3xy^{2} + y^{3}$
+
+## Homogeneous differential equation
+
+$\frac{dy}{dx} = f(x,y)$ is a homogeneous differential equation if $f(x,y)$ is a homogeneous function.
+
+## Alternative definition of homogeneous function
+
+ A function $f(x,y)$ is homogeneous function of degree $n$ if it can be expressed in the form
+ 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $f(x,y)= x^{n} g(y/x)$
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $f(x,y)= y^{n} h(x/y)$
+
+### Solving a homogeneous  differential equation
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $\frac{dy}{dx} = f(x,y)= g(y/x)$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  (1)
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; substitute $y= vx$.
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $\frac{dy}{dx} = v+ x.\frac{dv}{dx}$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  (2)
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; substitute (2) in (1)
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $v+ x.\frac{dv}{dx} = g(v)$
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $x.\frac{dv}{dx}= g(v)- v$
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $\frac{dv}{g(v)-v} = \frac{dx}{x}$  
+
+this can be further integrated to find the solution of differential equation.
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $\int\frac{dv}{g(v)-v} =  -\int\frac{1}{x} dx+ c$  
+
+general solution is obtained by replacing back  $v= y/x$
+
+#### QUESTION 1.
+
+Find the solution of homogeneous differential equation  
+
+$dx (x^{2} + y^{2})= dy. 2xy$  
+
+**Solution**  
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $\frac{dy}{dx}=  \frac{1+\frac{y^2}{x^2}}{2\frac{y}{x}}$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  (I)
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; let $y= vx$
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $\frac{dy}{dx}= v+ x. \frac{dv}{dx}$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   (II)
+
+
+(II)&nbsp;in (I)   
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$v + x\frac{dv}{dx} = \frac{1+\frac{v^2x^2}{x^2}}{2\frac{vx}{x}}$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$= \frac{1+v^2}{2v}$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$x\frac{dv}{dx} = \frac{1+v^2}{2v}-v$ 
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+$= \frac{1+v^2-2v^2}{2v}$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+$= \frac{1-v^2}{2v}$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$\frac{2v}{1-v^2}dv =  \frac{dx}{x}$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$\frac{2v}{v^2-1}dv =  -\frac{dx}{x}$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$\int\frac{2v}{v^2-1}dv =  -\int\frac{dx}{x}$  
+
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$log(v^2-1) = -logx+logc$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$log(v^2-1)+ logx = logc$
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$log(v^2-1)x =logc$  
+
+Substituting $v=y/x$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$log(\frac{y^2}{x^2}-1)x =logc$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$log(\frac {y^2-x^2}{x^2}x)=logc$  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$log(\frac {y^2-x^2}{x})=logc$
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$y^2-x^2=xc$  
+
+Solution for the differential equation is: 
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$y^2-x^2=xc$  
+
+
+#### QUESTION 2.
+
+Solve the equation $\frac{dy}{dx}= \frac{y(x-y)}{x^2}$  
+
+**Solution**  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$\frac{dy}{dx}= \frac{yx}{x^2}-\frac{y^2}{x^2}$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;$= \frac{yx}{x^2}-(\frac{y}{x})^2$  
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$y =vx$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$v+x\frac{dv}{dx}=v-v^2$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$x\frac{dv}{dx}=-v^2$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$\implies -\frac{1}{v^2}dv=\frac{1}{x}dx$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$-\int\frac{1}{v^2}dv=\int\frac{1}{x}dx$  
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $\implies \frac{1}{v} =log(x)+log(c)=log(cx)$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$v= \frac{1}{log(cx)}$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$v=\frac{y}{x}$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$\frac{y}{x}= \frac{1}{log(cx)}$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$y= \frac{x}{log(cx)}$  
+  
+  
+
+
+## Euler's theorem
+  
+  
+
+Consider a homogeneous function $f$ of $x$, $y$, $z$,...  of degree $n$, then  
+
+$x\frac{df}{dx} + y\frac{df}{dy} + z\frac{df}{dz} + .... = nf$    
+  
+  
+
+### QUESTION 1.
+
+Solve $f = x^3 + y^3 + 3xy^2$   
+  
+  
+**Solution**
+
+
+ 
+By Euler's theorem,  
+  
+  
+$x\frac{df}{dx} + y\frac{df}{dy} = nf$ 
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$f(x,y)$ is a homogeneous function of degree 3  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$\frac{df}{dx}= 3x^2 +3y^2$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$\frac{df}{dy}= 3y^2 +6xy$  
+
+Now  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$x(3x^2+3y^2) +y(3y^2+6xy)$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$=3x^3+3xy^2+3y^3+6xy^2$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$=3x^3+3y^3+9xy^2$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$=3(x^3+y^3+3xy^2)$  
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$=3f(x,y)$  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

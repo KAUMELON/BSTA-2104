@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Homogeneous Function | BIOMATHEMATICS</title>
+<meta name="author" content="Dr. Pratheesh P. Gopinath">
+<meta name="description" content="The function \(f(x,y)\); if it can be expressed by writing \(x = kx\) and \(y = ky\) to form a function \(f(kx,ky)= k^{2} f(x,y)\), such that constant \(k\) can be taken as the \(n^{th}\) power of...">
+<meta name="generator" content="bookdown 0.28 with bs4_book()">
+<meta property="og:title" content="Chapter 3 Homogeneous Function | BIOMATHEMATICS">
+<meta property="og:type" content="book">
+<meta property="og:image" content="/images/cover.PNG">
+<meta property="og:description" content="The function \(f(x,y)\); if it can be expressed by writing \(x = kx\) and \(y = ky\) to form a function \(f(kx,ky)= k^{2} f(x,y)\), such that constant \(k\) can be taken as the \(n^{th}\) power of...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 Homogeneous Function | BIOMATHEMATICS">
+<meta name="twitter:description" content="The function \(f(x,y)\); if it can be expressed by writing \(x = kx\) and \(y = ky\) to form a function \(f(kx,ky)= k^{2} f(x,y)\), such that constant \(k\) can be taken as the \(n^{th}\) power of...">
+<meta name="twitter:image" content="/images/cover.PNG">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BIOMATHEMATICS</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="preface.html">Preface</a></li>
+<li><a class="" href="syllabus.html">Syllabus</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="theorems.html"><span class="header-section-number">2</span> Theorems</a></li>
+<li><a class="active" href="homogeneous-function.html"><span class="header-section-number">3</span> Homogeneous Function</a></li>
+<li><a class="" href="references.html"><span class="header-section-number">4</span> References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="homogeneous-function" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Homogeneous Function<a class="anchor" aria-label="anchor" href="#homogeneous-function"><i class="fas fa-link"></i></a>
+</h1>
+<p>The function <span class="math inline">\(f(x,y)\)</span>; if it can be expressed by writing <span class="math inline">\(x = kx\)</span> and <span class="math inline">\(y = ky\)</span> to form a function <span class="math inline">\(f(kx,ky)= k^{2} f(x,y)\)</span>, such that constant <span class="math inline">\(k\)</span> can be taken as the <span class="math inline">\(n^{th}\)</span> power of exponent , it is called as homogeneous function of degree <span class="math inline">\(n\)</span>. Here <span class="math inline">\(n\)</span> is called as the <em>degree of homogeneity</em>.</p>
+<blockquote>
+<p>Example 3.1: Verify <span class="math inline">\(f(x,y)\)</span> is a homogeneous function.</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>
+<p><span class="math inline">\(f(x,y) = x^{2} - 2xy\)</span></p>
+<p><span class="math inline">\(f(kx,ky) = (kx)^{2}- 2(kx)(ky)\)</span><br>
+= <span class="math inline">\(k^{2} x^{2} - 2k^{2}xy\)</span><br>
+= <span class="math inline">\(k^{2}(x^{2}- 2xy)\)</span><br>
+= <span class="math inline">\(k^{2} f(x,y)\)</span></p>
+</li>
+</ol>
+<p>Homogeneous function of degree 2.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>
+<p><span class="math inline">\(f(x,y)= 3x+4y\)</span></p>
+<p><span class="math inline">\(f(kx,ky)= 3(kx)+4(ky)\)</span><br><span class="math inline">\(= 3kx+4ky\)</span><br><span class="math inline">\(= k(3x+4y)\)</span><br><span class="math inline">\(= k f(x,y)\)</span></p>
+<p>Homogeneous function of degree 1.</p>
+</li>
+<li>
+<p><span class="math inline">\(f(x,y)= tan(x/y)\)</span></p>
+<p><span class="math inline">\(f(kx,ky)= tan(kx/ky)\)</span></p>
+<p><span class="math inline">\(= k^{0} tan(x/y)\)</span><br><span class="math inline">\(= k^{0} f(x,y)\)</span></p>
+<p>Homogeneous function of degree 0.</p>
+</li>
+<li>
+<p><span class="math inline">\(f(x,y)= x log y+ 5xy\)</span></p>
+<p><span class="math inline">\(f(kx,ky)=kx. log ky+ 5 kx. ky\)</span><br><span class="math inline">\(= kx. log y+ 5k^{2} xy\)</span></p>
+<p>Not a Homogeneous function</p>
+</li>
+<li>
+<p><span class="math inline">\(f(x,y)= 2 sin x+ cos y\)</span></p>
+<p><span class="math inline">\(f(kx,ky)=2 sin kx+ cos ky\)</span></p>
+<p>Not a Homogeneous function</p>
+</li>
+</ol>
+<blockquote>
+<p>Problem 3.1: Verify wether the function below is homogenous</p>
+</blockquote>
+<p><span class="math inline">\(f(x,y)= x^{3}+ 2x^{2}y- 3xy^{2} + y^{3}\)</span></p>
+<div id="homogeneous-differential-equation" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> Homogeneous differential equation<a class="anchor" aria-label="anchor" href="#homogeneous-differential-equation"><i class="fas fa-link"></i></a>
+</h2>
+<p><span class="math inline">\(\frac{dy}{dx} = f(x,y)\)</span> is a homogeneous differential equation if <span class="math inline">\(f(x,y)\)</span> is a homogeneous function.</p>
+</div>
+<div id="alternative-definition-of-homogeneous-function" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> Alternative definition of homogeneous function<a class="anchor" aria-label="anchor" href="#alternative-definition-of-homogeneous-function"><i class="fas fa-link"></i></a>
+</h2>
+<p>A function <span class="math inline">\(f(x,y)\)</span> is homogeneous function of degree <span class="math inline">\(n\)</span> if it can be expressed in the form</p>
+<p>                                        <span class="math inline">\(f(x,y)= x^{n} g(y/x)\)</span></p>
+<p>                                        <span class="math inline">\(f(x,y)= y^{n} h(x/y)\)</span></p>
+<div id="solving-a-homogeneous-differential-equation" class="section level3" number="3.2.1">
+<h3>
+<span class="header-section-number">3.2.1</span> Solving a homogeneous differential equation<a class="anchor" aria-label="anchor" href="#solving-a-homogeneous-differential-equation"><i class="fas fa-link"></i></a>
+</h3>
+<p>                                    <span class="math inline">\(\frac{dy}{dx} = f(x,y)= g(y/x)\)</span>                                   (1)</p>
+<p>                      substitute <span class="math inline">\(y= vx\)</span>.</p>
+<p>                                    <span class="math inline">\(\frac{dy}{dx} = v+ x.\frac{dv}{dx}\)</span>                                           (2)</p>
+<p>                      substitute (2) in (1)</p>
+<p>                                    <span class="math inline">\(v+ x.\frac{dv}{dx} = g(v)\)</span></p>
+<p>                                    <span class="math inline">\(x.\frac{dv}{dx}= g(v)- v\)</span></p>
+<p>                                    <span class="math inline">\(\frac{dv}{g(v)-v} = \frac{dx}{x}\)</span></p>
+<p>this can be further integrated to find the solution of differential equation.</p>
+<p>                      <span class="math inline">\(\int\frac{dv}{g(v)-v} = -\int\frac{1}{x} dx+ c\)</span></p>
+<p>general solution is obtained by replacing back <span class="math inline">\(v= y/x\)</span></p>
+<div id="question-1." class="section level4" number="3.2.1.1">
+<h4>
+<span class="header-section-number">3.2.1.1</span> QUESTION 1.<a class="anchor" aria-label="anchor" href="#question-1."><i class="fas fa-link"></i></a>
+</h4>
+<p>Find the solution of homogeneous differential equation</p>
+<p><span class="math inline">\(dx (x^{2} + y^{2})= dy. 2xy\)</span></p>
+<p><strong>Solution</strong></p>
+<p>                      <span class="math inline">\(\frac{dy}{dx}= \frac{1+\frac{y^2}{x^2}}{2\frac{y}{x}}\)</span>                                   (I)</p>
+<p>                      let <span class="math inline">\(y= vx\)</span></p>
+<p>                      <span class="math inline">\(\frac{dy}{dx}= v+ x. \frac{dv}{dx}\)</span>                         (II)</p>
+<p>(II) in (I)</p>
+<p>                     <span class="math inline">\(v + x\frac{dv}{dx} = \frac{1+\frac{v^2x^2}{x^2}}{2\frac{vx}{x}}\)</span></p>
+<p>                                      <span class="math inline">\(= \frac{1+v^2}{2v}\)</span></p>
+<p>                     <span class="math inline">\(x\frac{dv}{dx} = \frac{1+v^2}{2v}-v\)</span></p>
+<p>                                  
+<span class="math inline">\(= \frac{1+v^2-2v^2}{2v}\)</span></p>
+<p>                                  
+<span class="math inline">\(= \frac{1-v^2}{2v}\)</span></p>
+<p>                     <span class="math inline">\(\frac{2v}{1-v^2}dv = \frac{dx}{x}\)</span></p>
+<p>                     <span class="math inline">\(\frac{2v}{v^2-1}dv = -\frac{dx}{x}\)</span></p>
+<p>                     <span class="math inline">\(\int\frac{2v}{v^2-1}dv = -\int\frac{dx}{x}\)</span></p>
+<p>                     <span class="math inline">\(log(v^2-1) = -logx+logc\)</span></p>
+<p>                     <span class="math inline">\(log(v^2-1)+ logx = logc\)</span></p>
+<p>                     <span class="math inline">\(log(v^2-1)x =logc\)</span></p>
+<p>Substituting <span class="math inline">\(v=y/x\)</span></p>
+<p>                     <span class="math inline">\(log(\frac{y^2}{x^2}-1)x =logc\)</span></p>
+<p>                     <span class="math inline">\(log(\frac {y^2-x^2}{x^2}x)=logc\)</span><br>
+                     <span class="math inline">\(log(\frac {y^2-x^2}{x})=logc\)</span></p>
+<p>                     <span class="math inline">\(y^2-x^2=xc\)</span></p>
+<p>Solution for the differential equation is:</p>
+<p>                                 <span class="math inline">\(y^2-x^2=xc\)</span></p>
+</div>
+<div id="question-2." class="section level4" number="3.2.1.2">
+<h4>
+<span class="header-section-number">3.2.1.2</span> QUESTION 2.<a class="anchor" aria-label="anchor" href="#question-2."><i class="fas fa-link"></i></a>
+</h4>
+<p>Solve the equation <span class="math inline">\(\frac{dy}{dx}= \frac{y(x-y)}{x^2}\)</span></p>
+<p><strong>Solution</strong></p>
+<p>                                 <span class="math inline">\(\frac{dy}{dx}= \frac{yx}{x^2}-\frac{y^2}{x^2}\)</span></p>
+<p>                                        <span class="math inline">\(= \frac{yx}{x^2}-(\frac{y}{x})^2\)</span></p>
+<p>                                 <span class="math inline">\(y =vx\)</span></p>
+<p>                                 <span class="math inline">\(v+x\frac{dv}{dx}=v-v^2\)</span></p>
+<p>                                 <span class="math inline">\(x\frac{dv}{dx}=-v^2\)</span></p>
+<p>                         <span class="math inline">\(\implies -\frac{1}{v^2}dv=\frac{1}{x}dx\)</span></p>
+<p>                                 <span class="math inline">\(-\int\frac{1}{v^2}dv=\int\frac{1}{x}dx\)</span></p>
+<p>                        <span class="math inline">\(\implies \frac{1}{v} =log(x)+log(c)=log(cx)\)</span></p>
+<p>                                 <span class="math inline">\(v= \frac{1}{log(cx)}\)</span></p>
+<p>                                                                  <span class="math inline">\(v=\frac{y}{x}\)</span></p>
+<p>                                 <span class="math inline">\(\frac{y}{x}= \frac{1}{log(cx)}\)</span></p>
+<p>                                 <span class="math inline">\(y= \frac{x}{log(cx)}\)</span></p>
+</div>
+</div>
+</div>
+<div id="eulers-theorem" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Euler’s theorem<a class="anchor" aria-label="anchor" href="#eulers-theorem"><i class="fas fa-link"></i></a>
+</h2>
+<p>Consider a homogeneous function <span class="math inline">\(f\)</span> of <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>,… of degree <span class="math inline">\(n\)</span>, then</p>
+<p><span class="math inline">\(x\frac{df}{dx} + y\frac{df}{dy} + z\frac{df}{dz} + .... = nf\)</span></p>
+<div id="question-1.-1" class="section level3" number="3.3.1">
+<h3>
+<span class="header-section-number">3.3.1</span> QUESTION 1.<a class="anchor" aria-label="anchor" href="#question-1.-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Solve <span class="math inline">\(f = x^3 + y^3 + 3xy^2\)</span></p>
+<p><strong>Solution</strong></p>
+<p>By Euler’s theorem,</p>
+<p><span class="math inline">\(x\frac{df}{dx} + y\frac{df}{dy} = nf\)</span></p>
+<p>                                 <span class="math inline">\(f(x,y)\)</span> is a homogeneous function of degree 3</p>
+<p>                                 <span class="math inline">\(\frac{df}{dx}= 3x^2 +3y^2\)</span></p>
+<p>                                 <span class="math inline">\(\frac{df}{dy}= 3y^2 +6xy\)</span></p>
+<p>Now</p>
+<p>                                 <span class="math inline">\(x(3x^2+3y^2) +y(3y^2+6xy)\)</span></p>
+<p>                                 <span class="math inline">\(=3x^3+3xy^2+3y^3+6xy^2\)</span></p>
+<p>                                 <span class="math inline">\(=3x^3+3y^3+9xy^2\)</span></p>
+<p>                                 <span class="math inline">\(=3(x^3+y^3+3xy^2)\)</span></p>
+<p>                                 <span class="math inline">\(=3f(x,y)\)</span></p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="theorems.html"><span class="header-section-number">2</span> Theorems</a></div>
+<div class="next"><a href="references.html"><span class="header-section-number">4</span> References</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#homogeneous-function"><span class="header-section-number">3</span> Homogeneous Function</a></li>
+<li><a class="nav-link" href="#homogeneous-differential-equation"><span class="header-section-number">3.1</span> Homogeneous differential equation</a></li>
+<li>
+<a class="nav-link" href="#alternative-definition-of-homogeneous-function"><span class="header-section-number">3.2</span> Alternative definition of homogeneous function</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#solving-a-homogeneous-differential-equation"><span class="header-section-number">3.2.1</span> Solving a homogeneous differential equation</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#eulers-theorem"><span class="header-section-number">3.3</span> Euler’s theorem</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#question-1.-1"><span class="header-section-number">3.3.1</span> QUESTION 1.</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BIOMATHEMATICS</strong>" was written by Dr. Pratheesh P. Gopinath. It was last built on 2022-01-30.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

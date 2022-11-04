@@ -11,4 +11,12 @@ example
 rolles-theorem
 geometric-interpretation-1
 example-1
+homogeneous-function
+homogeneous-differential-equation
+alternative-definition-of-homogeneous-function
+solving-a-homogeneous-differential-equation
+question-1.
+question-2.
+eulers-theorem
+question-1.-1
 references

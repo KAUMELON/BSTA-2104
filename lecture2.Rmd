@@ -1,4 +1,4 @@
-# Theorems  
+# Theorems 
 
 ## Mean value theorem
 
