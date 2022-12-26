@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 4 NUMERICAL METHODS FOR SOLVING ALGEBRAIC AND TRANSCENDENTAL EQUATIONS | BIOMATHEMATICS</title>
+<meta name="author" content="Dr. Pratheesh P. Gopinath">
+<meta name="description" content="4.1 Introduction An expression of the form \(f(𝑥)\) = \({a_0}\)𝑥𝑛+\({a_1}\)𝑥𝑛−1 + ⋯ + \({a_n−1}\)𝑥 + \({a_n}\),\(a_0 ≠ 0\) is called a polynomial of degree ’𝑛’and the polynomial \(𝑓(𝑥) =0\) is...">
+<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta property="og:title" content="Chapter 4 NUMERICAL METHODS FOR SOLVING ALGEBRAIC AND TRANSCENDENTAL EQUATIONS | BIOMATHEMATICS">
+<meta property="og:type" content="book">
+<meta property="og:image" content="/images/cover.PNG">
+<meta property="og:description" content="4.1 Introduction An expression of the form \(f(𝑥)\) = \({a_0}\)𝑥𝑛+\({a_1}\)𝑥𝑛−1 + ⋯ + \({a_n−1}\)𝑥 + \({a_n}\),\(a_0 ≠ 0\) is called a polynomial of degree ’𝑛’and the polynomial \(𝑓(𝑥) =0\) is...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 4 NUMERICAL METHODS FOR SOLVING ALGEBRAIC AND TRANSCENDENTAL EQUATIONS | BIOMATHEMATICS">
+<meta name="twitter:description" content="4.1 Introduction An expression of the form \(f(𝑥)\) = \({a_0}\)𝑥𝑛+\({a_1}\)𝑥𝑛−1 + ⋯ + \({a_n−1}\)𝑥 + \({a_n}\),\(a_0 ≠ 0\) is called a polynomial of degree ’𝑛’and the polynomial \(𝑓(𝑥) =0\) is...">
+<meta name="twitter:image" content="/images/cover.PNG">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BIOMATHEMATICS</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="preface.html">Preface</a></li>
+<li><a class="" href="syllabus.html">Syllabus</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="theorems.html"><span class="header-section-number">2</span> Theorems</a></li>
+<li><a class="" href="homogeneous-function.html"><span class="header-section-number">3</span> Homogeneous Function</a></li>
+<li><a class="active" href="numerical-methods-for-solving-algebraic-and-transcendental-equations.html"><span class="header-section-number">4</span> NUMERICAL METHODS FOR SOLVING ALGEBRAIC AND TRANSCENDENTAL EQUATIONS</a></li>
+<li><a class="" href="references.html"><span class="header-section-number">5</span> References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="numerical-methods-for-solving-algebraic-and-transcendental-equations" class="section level1" number="4">
+<h1>
+<span class="header-section-number">4</span> NUMERICAL METHODS FOR SOLVING ALGEBRAIC AND TRANSCENDENTAL EQUATIONS<a class="anchor" aria-label="anchor" href="#numerical-methods-for-solving-algebraic-and-transcendental-equations"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction-1" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> <strong>Introduction</strong><a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>An expression of the form <span class="math inline">\(f(𝑥)\)</span> = <span class="math inline">\({a_0}\)</span>𝑥<sup>𝑛</sup>+<span class="math inline">\({a_1}\)</span>𝑥<sup>𝑛−1</sup> + ⋯ + <span class="math inline">\({a_n−1}\)</span>𝑥 + <span class="math inline">\({a_n}\)</span>,<span class="math inline">\(a_0 ≠ 0\)</span> is called a polynomial of degree ’𝑛’and the polynomial <span class="math inline">\(𝑓(𝑥) =0\)</span> is called an algebraic equation of 𝑛<sup>𝑡ℎ</sup> degree. If <span class="math inline">\(𝑓(𝑥)\)</span> contains trigonometric, logarithmic or exponential functions, then <span class="math inline">\(𝑓(𝑥) = 0\)</span> is called a transcendental equation.
+For example x<sup>2</sup>+2sin𝑥+𝑒<sup>𝑥</sup> = 0 is a transcendental equation.
+If <span class="math inline">\(𝑓(𝑥)\)</span>is an algebraic polynomial of degree less than or equal to 4, direct methods for finding the roots of such equation are available. But if <span class="math inline">\(𝑓(𝑥)\)</span> is of higher degree or it involves transcendental functions, direct methods do not exist and we need to apply numerical methods to find the roots of the equation <span class="math inline">\(𝑓(𝑥) = 0\)</span>.</p>
+<div id="some-useful-results" class="section level3" number="4.1.1">
+<h3>
+<span class="header-section-number">4.1.1</span> <strong>Some useful results</strong><a class="anchor" aria-label="anchor" href="#some-useful-results"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>If 𝛼 is root of the equation <span class="math inline">\(𝑓(𝑥) = 0\)</span>, then <span class="math inline">\(𝑓(𝛼 ) = 0\)</span></p></li>
+<li><p>A root of an equation <span class="math inline">\(f(x)=0\)</span> is the value of x, say <span class="math inline">\(x=α\)</span></p></li>
+<li><p>Every equation of 𝑛<sup>𝑡ℎ</sup> degree has exactly 𝑛 roots (real or imaginary)</p></li>
+<li>
+<p><strong>Intermediate Value Theorem</strong>: If <span class="math inline">\(𝑓(𝑥)\)</span> is a continuous function in a
+closed interval <span class="math inline">\(\left\lbrack a,b \right\rbrack\)</span> and <span class="math inline">\(\left.𝑓(𝑎) \&amp;\right.𝑓(𝑏)\)</span> are having opposite signs, then the equation <span class="math inline">\(f(𝑥) = 0\)</span> has atleast one real root or odd number of roots between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
+<p>If <span class="math inline">\(𝑓(𝑥)\)</span> is a continuous function in the closed interval <span class="math inline">\(\left\lbrack a,b \right\rbrack\)</span> and <span class="math inline">\(\left.𝑓(𝑎)\&amp;\right.𝑓(𝑏)\)</span> are of same signs, then the equation <span class="math inline">\(𝑓(𝑥) = 0\)</span> has no root or even number of roots between 𝑎and 𝑏.</p>
+</li>
+<li><p>A number α is a simple root of <span class="math inline">\(f(x) =0\)</span>, if <span class="math inline">\(f(α)=0\)</span> and <span class="math inline">\(f'(α) ≠ 0\)</span>, then we can write <span class="math inline">\(f(x)\)</span> as,
+<span class="math display">\[f(x)=(x-α)g(x), g(α)≠0\]</span></p></li>
+<li><p>A number α is a multiple root of multiplicity m of <span class="math inline">\(f(x) =0\)</span>, if <span class="math inline">\(f(α)\)</span>=<span class="math inline">\(f'(α)\)</span>=<span class="math inline">\(\cdots\)</span>=<span class="math inline">\(f^{m-1}(α)= 0\)</span> and <span class="math inline">\(f^{m}(α)\)</span>= 0, then <span class="math inline">\(f(x)\)</span> can be written as,
+<span class="math display">\[f(x)=(x-α)^{m}g(x), g(α)≠0\]</span></p></li>
+<li><p>A polynomial equation of degree n will have exactly n roots, real orcomplex, simple or multiple.</p></li>
+<li><p>A transcendental equation may have one root or infinite no. of roots depending on the form of <span class="math inline">\(f(x)\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div id="methods-for-finding-the-root" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> <strong>Methods for finding the root</strong><a class="anchor" aria-label="anchor" href="#methods-for-finding-the-root"><i class="fas fa-link"></i></a>
+</h2>
+<p>The methods for finding the roots of <span class="math inline">\(f(x)=0\)</span> are classified as</p>
+<ul>
+<li><p>Direct methods</p></li>
+<li><p>Numerical methods</p></li>
+</ul>
+<p>Direct methods give the exact values of all the roots in a finite number of steps.</p>
+<p>Numerical methods are based on the idea of successive approximations. In these methods we start with one or two initial approximations to the root and obtain a sequence of approximations <span class="math inline">\(x_1,\)</span><span class="math inline">\(x_2,\)</span>,<span class="math inline">\(x_3,\)</span>,<span class="math inline">\(\cdots\)</span><span class="math inline">\(,x_k\)</span> which in the limit as <span class="math inline">\(k\to\infty\)</span> to the exact root <span class="math inline">\(x=a\)</span>.</p>
+<p>There are no direct methods for solving higher degree algebraic equations or transcendental equations. Such equations can be solved by Numerical methods.</p>
+<p>In theses methods, we first find an interval in which the root lies. If a and b are two numbers such that f(a) and f(b) have opposite signs, then a root of <span class="math inline">\(f(x)=0\)</span> lies in between a and b. We take a or b or any value in between a or b as first approximation <span class="math inline">\(x_1\)</span>. This is further improved by numerical methods.</p>
+<p><strong>Order of convergence:</strong> For any iterative numerical method, each successive iteration gives an approximation that moves progressively closer to actual solution. This is known as convergence. Any numerical method is said have order of convergence <span class="math inline">\(𝜌\)</span>, if <span class="math inline">\(𝜌\)</span> is the largest positive number such that <span class="math inline">\(|𝜖_{𝑛+1}|≤{𝑘}{|𝜖_{𝑛}|}^𝜌\)</span> , where <span class="math inline">\(𝜖_𝑛\)</span> and <span class="math inline">\(𝜖_{𝑛+1}\)</span> are errors
+in <span class="math inline">\(𝑛^{𝑡ℎ}\)</span> and <span class="math inline">\((𝑛 + 1)^{𝑡ℎ}\)</span> iterations, <span class="math inline">\(𝑘\)</span> is a finite positive constant.</p>
+</div>
+<div id="numerical-methods-for-finding-root" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> <strong>Numerical Methods for finding root</strong><a class="anchor" aria-label="anchor" href="#numerical-methods-for-finding-root"><i class="fas fa-link"></i></a>
+</h2>
+<div id="bisection-method-or-bolzano-method" class="section level3" number="4.3.1">
+<h3>
+<span class="header-section-number">4.3.1</span> <strong>Bisection Method (or Bolzano Method)</strong><a class="anchor" aria-label="anchor" href="#bisection-method-or-bolzano-method"><i class="fas fa-link"></i></a>
+</h3>
+<p>Bisection method is used to find an approximate root in an interval by repeatedly bisecting into sub intervals. It is a very simple and robust method but it is also relatively slow. This methods is based on the intermediate value theorem for continuous functions.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:softw1"></span>
+<img src="images/bisecmethod.jpeg" alt="Figure showing Bisection method" width="50%"><p class="caption">
+Figure 4.1: Figure showing Bisection method
+</p>
+</div>
+<div id="algorithm" class="section level4" number="4.3.1.1">
+<h4>
+<span class="header-section-number">4.3.1.1</span> Algorithm:<a class="anchor" aria-label="anchor" href="#algorithm"><i class="fas fa-link"></i></a>
+</h4>
+<p>Let <span class="math inline">\(𝑓(𝑥)\)</span> be a continuous function in the interval <span class="math inline">\(\left\lbrack a,b \right\rbrack\)</span> and <span class="math inline">\(\left.𝑓(𝑎)\&amp;\right.𝑓(𝑏)\)</span>, such that <span class="math inline">\(𝑓(𝑎)\)</span> and <span class="math inline">\(𝑓(𝑏)\)</span> are of opposite signs, i.e. <span class="math inline">\({𝑓(𝑎)𝑓(𝑏)} &lt; 0\)</span>, then there will be a root of <span class="math inline">\(f(x) = 0\)</span> in between a and b.</p>
+<p>Step 1 : Let the first approximation be the mid point of the interval <span class="math inline">\((a,b)\)</span>. i.e.,</p>
+<p><span class="math display">\[x_{1} = \frac{a + b}{2}\]</span></p>
+<ul>
+<li><p>If <span class="math inline">\(f(x_1)= 0\)</span>, then <span class="math inline">\(x_1\)</span> is a root.</p></li>
+<li><p>Otherwise root lies between <span class="math inline">\(a\)</span> and <span class="math inline">\(x_1\)</span> or <span class="math inline">\(x_1\)</span> and <span class="math inline">\(b\)</span> according as
+<span class="math inline">\(f(x_1)\)</span> is positive or negative.</p></li>
+<li><p>Then again we bisect the interval and continue the process until the
+root is found to desired accuracy.</p></li>
+<li><p>Let <span class="math inline">\(f(x_1)\)</span> is positive, then root lies in between <span class="math inline">\(a\)</span> and <span class="math inline">\(x_1\)</span>, then
+the second approximation is given by,</p></li>
+</ul>
+<p><span class="math display">\[x_{2} = \frac{a + \ x_{1}}{2}\]</span></p>
+<ul>
+<li>Let <span class="math inline">\(f(x_2)\)</span> is positive, then root lies in between <span class="math inline">\(a\)</span> and <span class="math inline">\(x_1\)</span>, then
+the second approximation is given by,</li>
+</ul>
+<p><span class="math display">\[x_{3} = \frac{x_{2} + \ x_{1}}{2}\]</span></p>
+<p>Similarly, we get other approximations.</p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li><p>Convergence is not unidirectional as none of the end points is fixed. As a result convergence of Bisection method is very slow.</p></li>
+<li><p>Repeating the procedure 𝑛 times, the new interval will be exactly half the length of the previous one, until the root is found of desired accuracy (error less than ∈). Therefore and at the end of<span class="math inline">\(𝑛^{𝑡ℎ}\)</span> iteration, the interval containing the root will be of length <span class="math inline">\(\frac{|b-a|}{2^n}\)</span>, such that <span class="math inline">\(\frac{|b-a|}{2^n}|&lt;∈\)</span>
+⇒ <span class="math inline">\(\log\frac{|b-a|}{2^n}|&lt;∈\)</span>
+⇒ <span class="math inline">\(\log{|𝑏 − 𝑎|}− log {2^𝑛}&lt; log ∈\)</span>
+⇒ <span class="math inline">\(\log{|𝑏 − 𝑎|}− log ∈ &lt; n log 2\)</span>
+⇒ <span class="math inline">\(𝑛 &gt; \frac{log |𝑏−𝑎|−log ∈}{log2}\)</span></p></li>
+</ul>
+<p>∴ In bisection method, the minimum number of iterations required to achieve the desired accuracy (error less than ∈) are</p>
+<p><span class="math display">\[n\  \geq \ \frac{\log\frac{|b - a|}{\in}}{\log{\ 2}}\]</span></p>
+</div>
+<div id="examples" class="section level4" number="4.3.1.2">
+<h4>
+<span class="header-section-number">4.3.1.2</span> <strong>Examples</strong><a class="anchor" aria-label="anchor" href="#examples"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Example 1</strong></p>
+<p>Find a real root of the equation <span class="math inline">\(f(x) = x^{3}-x-1=0\)</span> using Bisection method?</p>
+<p><strong>Solution</strong></p>
+<ul>
+<li>
+<p>First find the interval in which the root lies, by trail and error method</p>
+<p><span class="math display">\[f(x) = x^{3}-x-1\]</span></p>
+<p><span class="math display">\[f(0) = -1\]</span></p>
+<p><span class="math display">\[f(1) = -1\]</span></p>
+<p><span class="math display">\[f(2) = 5\]</span></p>
+</li>
+</ul>
+<p>Here, <span class="math inline">\(f(1) = -1\)</span> and <span class="math inline">\(f(2) = 5\)</span></p>
+<p>i.e, <span class="math inline">\(f(1) . f(2) = -5 &lt;0\)</span></p>
+<p>∴ A root of <span class="math inline">\(f(x)=x^{3}-x-1 =0\)</span> lies in between 1 and 2.</p>
+<p><strong>First approximation</strong></p>
+<p><span class="math inline">\(a = 1,b=2\)</span>
+<span class="math inline">\(x_{1} = \frac{a + b}{2}\)</span> =<span class="math inline">\(\frac{1 + 2}{2}\)</span> = 1.5</p>
+<p><span class="math inline">\(f(x_1)\)</span> = <span class="math inline">\(f(1.5)\)</span>
+= <span class="math inline">\((1.5)^{3}-1.5-1\)</span>
+= <span class="math inline">\(0.875\)</span>, <em>which is positive</em></p>
+<p><strong>Hence the root lies in between 1 and 1.5</strong></p>
+<p><strong>Second approximation</strong></p>
+<p><span class="math inline">\(a = 1, b=1.5\)</span></p>
+<p><span class="math inline">\(x_{2} = \frac{a + x_{1}}{2}\)</span> = <span class="math inline">\(\frac{1 + 1.5}{2}\)</span> = <span class="math inline">\(1.25\)</span></p>
+<p><span class="math inline">\(f(x_2)\)</span>= <span class="math inline">\(f(1.25)\)</span>
+= <span class="math inline">\((1.25)^{3}-1.25-1\)</span>
+= <span class="math inline">\(-0.29\)</span>, <em>which is negative</em></p>
+<p><strong>Hence the root lies in between 1.25 and 1.5</strong></p>
+<p><strong>Third approximation</strong></p>
+<p><span class="math inline">\(a = 1.25, b=1.5\)</span></p>
+<p><span class="math inline">\(x_{3} = \frac{x_{2} + b}{2}\)</span> = <span class="math inline">\(\frac{1.25 + 1.5}{2}\)</span> = 1.375</p>
+<p><span class="math inline">\(f(x_3)\)</span> = <span class="math inline">\(f(1.375)\)</span>
+= <span class="math inline">\((1.375)^{3}-1.375-1\)</span>
+= <span class="math inline">\(0.224\)</span>, <em>which is positive</em></p>
+<p><strong>Hence the root lies in between 1.25 and 1.375</strong></p>
+<p>Similarly we get <span class="math inline">\(x_4=1.3125, x_5=1.34375, x_6=1.328125\)</span> etc.</p>
+<p><strong>Example 2</strong></p>
+<p>Find a Find a root of <span class="math inline">\(f(x)=xe^{x}-1=0\)</span>, using Bisection method, correct to three decimal places.</p>
+<p><strong>SOLUTION</strong></p>
+<p><span class="math inline">\(f(0) = 0.e^0-1=-1\)</span>&lt; 0 <em>(negative)</em></p>
+<p><span class="math inline">\(f(1) = 1.e^1-1 = 1.7183 &gt; 0\)</span>(positive)</p>
+<p>Hence a root of <span class="math inline">\(f(x) = 0\)</span> lies in between 0 and 1.</p>
+<p><span class="math display">\[x_{1} = \frac{0 + 1}{2} = 0.5\]</span></p>
+<p><span class="math inline">\(f(0.5) = 0.5 e^{0.5}{-1} = -0.1756\)</span></p>
+<p>Hence the root lies in between 0.5 and 1</p>
+<p><span class="math display">\[x_{2} = \frac{0.5 + 1}{2} = 0.75\]</span></p>
+<p>Proceeding like this, we get the sequence of approximations as follows</p>
+<p><span class="math inline">\(x_3= 0.625\)</span></p>
+<p><span class="math inline">\(x_4= 0.5625\)</span></p>
+<p><span class="math inline">\(x_5= 0.59375\)</span></p>
+<p><span class="math inline">\(x_6= 0.5781\)</span></p>
+<p><span class="math inline">\(x_7= 0.5703\)</span></p>
+<p><span class="math inline">\(x_8= 0.5664\)</span></p>
+<p><span class="math inline">\(x_9= 0.5684\)</span></p>
+<p><span class="math inline">\(x_{10}= 0.5674\)</span></p>
+<p><span class="math inline">\(x_{11}= 0.5669\)</span></p>
+<p><span class="math inline">\(x_{12}= 0.5672\)</span></p>
+<p><span class="math inline">\(x_{13}= 0.5671\)</span></p>
+<p>Hence, the required root correct to three decimal places is, <span class="math inline">\(x=0.567\)</span>.</p>
+<p><strong>Example 3</strong></p>
+<p>Using bisection method find an approximate root of the equation <span class="math inline">\(\sin x = \frac{1}{x}\ \)</span> correct to two decimal places.</p>
+<p><strong>Solution:</strong>
+<span class="math display">\[𝑓(𝑥) = 𝑥sin 𝑥 − 1\]</span></p>
+<p>Here <span class="math inline">\(f(1) = sin (1) − 1 = −0.1585\)</span> and <span class="math inline">\(𝑓(2) = 2sin 2 − 1 = 0.8186\)</span></p>
+<p>Also 𝑓(𝑥)is continuous in <span class="math inline">\(\left\lbrack 1,2 \right\rbrack\)</span>
+∴ Atleast one root exists in <span class="math inline">\(\left\lbrack 1,2 \right\rbrack\)</span></p>
+<p><strong>Initial approximation:</strong></p>
+<p><span class="math inline">\(a = 1, 𝑏 = 2\)</span></p>
+<p><span class="math inline">\(x_{0} = \frac{1 + 2}{2} =1.5\)</span>
+<span class="math inline">\(𝑓(1.5) = 0.4963\)</span>, <span class="math inline">\(𝑓(1). 𝑓(1.5)&lt; 0\)</span></p>
+<p><strong>First approximation:</strong></p>
+<p>$ = 1, 𝑏 = 1.5$</p>
+<p><span class="math inline">\(x_{1} = \frac{1 + 1.5}{2}=1.25\)</span>
+<span class="math inline">\(𝑓(1.25) = 0.1862\)</span>, <span class="math inline">\(𝑓(1).𝑓(1.25)&lt; 0\)</span></p>
+<p><strong>Second approximation:</strong></p>
+<p><span class="math inline">\(𝑎 = 1, 𝑏 = 1.25\)</span></p>
+<p><span class="math inline">\(𝑥_{2}=\frac{1+1.25}{2}= 1.125\)</span>,
+<span class="math inline">\(𝑓(1.125) = 0.0151\)</span>, <span class="math inline">\(𝑓(1). 𝑓(1.125)&lt; 0\)</span></p>
+<p><strong>Third approximation:</strong></p>
+<p><span class="math inline">\(𝑎 = 1, 𝑏 = 1.125\)</span></p>
+<p><span class="math inline">\(𝑥_{3}=\frac{1+1.125}{2} = 1.0625\)</span>,
+<span class="math inline">\(𝑓(1.0625) = −0.0718\)</span>, <span class="math inline">\(𝑓(1.0625).𝑓(1.125)&lt; 0\)</span></p>
+<p><strong>Fourth approximation:</strong></p>
+<p><span class="math inline">\(𝑎 = 1.0625, 𝑏 = 1.125\)</span></p>
+<p><span class="math inline">\(𝑥_{4}=\frac{1.0625+1.125}{2}= 1.09375\)</span>,
+<span class="math inline">\(𝑓(1.09375) = −0.0284\)</span>,
+<span class="math inline">\(𝑓(1.09375).𝑓(1.125)&lt;0\)</span></p>
+<p><strong>Fifth approximation:</strong></p>
+<p><span class="math inline">\(𝑎 = 1.09375, 𝑏 = 1.125\)</span></p>
+<p><span class="math inline">\(𝑥_{5}= \frac{1.09375+1.125}{2} = 1.10937\)</span>,
+<span class="math inline">\(𝑓(1.10937) = −0.0066\)</span>,
+<span class="math inline">\(𝑓(1.10937). 𝑓(1.125)&lt;0\)</span></p>
+<p><strong>Sixth approximation:</strong></p>
+<p><span class="math inline">\(𝑎 = 1.10937, 𝑏 = 1.125\)</span></p>
+<p><span class="math inline">\(𝑥_{6}=\frac{1.10937+1.125}{2}= 1.11719\)</span>,
+<span class="math inline">\(𝑓(1.11719) = .0042\)</span>,
+<span class="math inline">\(𝑓(1.10937). 𝑓(1.11719)&lt;0\)</span></p>
+<p><strong>Seventh approximation:</strong></p>
+<p><span class="math inline">\(𝑎 = 1.10937, 𝑏 = 1.11719\)</span></p>
+<p><span class="math inline">\(𝑥_{7}=\frac{1.10937+1.11719}{2}= 1.11328\)</span>,
+<span class="math inline">\(𝑓(1.11328) = −.00120\)</span></p>
+<p>Hence 1.11328 is the real root correct to two decimal places.</p>
+</div>
+</div>
+<div id="regular-false-method" class="section level3" number="4.3.2">
+<h3>
+<span class="header-section-number">4.3.2</span> <strong>Regular False Method</strong><a class="anchor" aria-label="anchor" href="#regular-false-method"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:softw2"></span>
+<img src="images/regular.png" alt="Figure showing Regular False method" width="50%"><p class="caption">
+Figure 4.2: Figure showing Regular False method
+</p>
+</div>
+<p>Regula-Falsi method is also known as method of false position as false position of curve is taken as initial approximation. Let <span class="math inline">\(y=f(x)\)</span> be represented by the curve AB. The real root of equation <span class="math inline">\(f(x) = 0\)</span> is α as shown in figure. The false position of curve AB is taken as chord AB and initial approximation x_1 is the point of intersection of chord AB with x-axis. Successive approximations x2, x3, ………….. are given by point of intersection of chord A’B, A”B,……. with x-axis, until the root is found to be of desired accuracy.</p>
+<p>Now equation of chord AB in two-point form is given by:
+<span class="math display">\[{𝑦 − 𝑓(𝑎)}= \frac{𝑓(𝑏)−𝑓(𝑎)}{b-a}{(𝑥 − 𝑎)}\]</span></p>
+<p>To find <span class="math inline">\(𝑥_1\)</span> (point of intersection of chord AB with 𝑥 - axis), put 𝑦=0</p>
+<p>⇒ <span class="math display">\[−𝑓(𝑎) = \frac{𝑓(𝑏)−𝑓(𝑎)}{b-a}{(𝑥_{1}− 𝑎)}\]</span>
+⇒ <span class="math display">\[\frac{-f(a)(b-a)}{f(b)-f(a)}=(x_1-a)\]</span>
+⇒ <span class="math display">\[(x_1−a) = \frac{−(𝑏−𝑎)𝑓(𝑎)}{f(b)-f(a)}\]</span>
+⇒ <span class="math display">\[ x_1 = a-\frac{(b-a)f(a)}{f(b)-f(a)}\]</span></p>
+<p>Repeat the procedure until the root is found to the desired accuracy.</p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li><p>Rate of convergence is much faster than that of bisection method.</p></li>
+<li><p>Unlike bisection method, one end point will converge to the actual root 𝑎, whereas the other end point always remains fixed. As a result Regula- Falsi method has linear convergence.</p></li>
+</ul>
+<div id="examples-1" class="section level4" number="4.3.2.1">
+<h4>
+<span class="header-section-number">4.3.2.1</span> <strong>Examples</strong><a class="anchor" aria-label="anchor" href="#examples-1"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Example 1</strong></p>
+<p>Apply Regula Falsi method to find a root of the equation <span class="math inline">\(x^3+x-1=0\)</span> correct to two decimal places.</p>
+<p><strong>Solution:</strong>
+<span class="math display">\[𝑓(𝑥) = 𝑥^{3} + 𝑥 − 1\]</span></p>
+<p>Here <span class="math inline">\(𝑓(0) = −1\)</span> and <span class="math inline">\(𝑓(1) = 1\)</span> ⇒ <span class="math inline">\(𝑓(0). 𝑓(1)&lt; 0\)</span></p>
+<p>Also 𝑓(𝑥)is continuous in <span class="math inline">\(\left\lbrack 0,1 \right\rbrack\)</span>,
+∴ atleast one root exists in <span class="math inline">\(\left\lbrack 0,1 \right\rbrack\)</span></p>
+<p><strong>Initial approximation</strong></p>
+<p><span class="math display">\[x_{0} = a - \ \frac{(b - a)}{f(b) - f(a)}\ f(a)\]</span></p>
+<p>a = 0, b=1</p>
+<p><span class="math inline">\({ x}_{0} = 0 - \frac{(1 - 0)}{f(1) - f(0)}\ f(0) = 0.5\)</span></p>
+<p><span class="math inline">\(f(0.5) = -0.375\)</span>, <span class="math inline">\(f(0.5).f(1)&lt;0\)</span></p>
+<p><strong>First approximation</strong></p>
+<p>a = 0.5, b=1</p>
+<p><span class="math inline">\({x}_{1} = 0.5 - \frac{(1 - 0.5)}{f(1) - f(0.5)}\ f(0.5)= 0.636\)</span></p>
+<p><span class="math inline">\(f(0.636) = -0.107\)</span>, <span class="math inline">\(f(0.636).f(1) &lt;0\)</span></p>
+<p><strong>Second approximation</strong></p>
+<p>a = 0.636, b=1</p>
+<p><span class="math inline">\({x}_{2} = 0.636 - \frac{(1 - 0.636)}{f(1) - f(0.636)}\ f(0.636)= 0.6711\)</span></p>
+<p><span class="math inline">\(f(0.6711) = -0.0267\)</span>, <span class="math inline">\(f(0.6711).f(1)&lt;0\)</span></p>
+<p><strong>Third approximation</strong></p>
+<p>a = 0.6711, b=1</p>
+<p><span class="math inline">\({ x}_{3} = 0.6711 - \frac{(1 - 0.6711)}{f(1) - f(0.6711)}\ f(0.6711)= 0.6796\)</span></p>
+<p>First 2 decimal places have been stabilized, hence 0.6796 is the real root correct to two decimal places</p>
+<p><strong>Example 2</strong></p>
+<p>Determine the root of the equation <span class="math inline">\(\cos{x - \ e^{x}}= 0\)</span> by the method of False position correct to two decimal places.</p>
+<p><strong>Solution:</strong></p>
+<p><span class="math inline">\(f(x) = cos x-xe^x\)</span></p>
+<p><span class="math inline">\(f(0) = cos 0-0e^{0}=1\)</span>
+<span class="math inline">\(f(1) = cos 1-1e^{1}= -2.177979523\)</span></p>
+<p>a = 0 and b = 1, the root lies in between 0 and 1</p>
+<p><span class="math inline">\(x_1= 0.3146653378\)</span></p>
+<p><span class="math inline">\(f(x_1) = f(0.314653378) = 0.51986\)</span></p>
+<p>Therefore, the root lies in between 0.314653378 and 1</p>
+<p><span class="math inline">\(x_2= 0.44673\)</span></p>
+<p>Similarly,</p>
+<p><span class="math inline">\(x_3= 0.49402\)</span></p>
+<p><span class="math inline">\(x_4= 0.50995\)</span></p>
+<p><span class="math inline">\(x_5= 0.51520\)</span></p>
+<p><span class="math inline">\(x_6= 0.51692\)</span></p>
+<p>First 2 decimal places have been stabilized, hence 0.51692 is the real root correct to two decimal place</p>
+</div>
+</div>
+<div id="newton-raphson-method" class="section level3" number="4.3.3">
+<h3>
+<span class="header-section-number">4.3.3</span> <strong>Newton Raphson Method</strong><a class="anchor" aria-label="anchor" href="#newton-raphson-method"><i class="fas fa-link"></i></a>
+</h3>
+<p>This is another important method. This method named after Isaac Newton and Joseph Raphson is a powerful technique for solving equations numerically.</p>
+<p>Let <span class="math inline">\(x_0\)</span> be approximation for the root of <span class="math inline">\(f(x)=0\)</span>. Let <span class="math inline">\(x_1=x_0+h\)</span> be the correct root so that <span class="math inline">\(f(x_1)=0\)</span>. Expanding <span class="math inline">\(f(x_1) = f(x_0+h)\)</span> by Taylor
+series, we get,</p>
+<p><span class="math inline">\(f(x_1) = f(x_0+h) = f(x_0) + h f'(x_0) +\frac{h^{2}}{2!}f"(x~0~)+\cdots= 0\)</span></p>
+<p>For small values of h, neglecting the terms with <span class="math inline">\(h^2\)</span>, <span class="math inline">\(h^3\)</span>,<span class="math inline">\(\cdots\)</span> we get,</p>
+<p><span class="math display">\[f(x_0) + h f'(x_0) = 0\]</span></p>
+<p>and <span class="math inline">\(h =\frac{- f(x_{0})}{f^{'}(x_{0})}\)</span></p>
+<p><span class="math inline">\(x_1~= x_0+h\)</span></p>
+<p><span class="math inline">\(= x_0-\frac{f(x_{0})}{f'(x_{0})}\)</span></p>
+<p>Proceeding like this, successive approximation <span class="math inline">\(x_2, x_3,\cdots,x_{n+1}\)</span> are given by,</p>
+<p><span class="math inline">\({x}_{n + 1} = \ x_{n}\ –\ \frac{f(x_{n})}{f^{'}(x_{n})}\)</span> for <span class="math inline">\(n=0,1,2,.....\)</span></p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li><p>Netwon-Raphson method can be used for solving both algebraic and transcendental equations and it can alsobe used when roots are complex.</p></li>
+<li><p>Initial approximation x<sub>0</sub> can be taken randomly in the interval
+<span class="math inline">\(\left\lbrack a,b \right\rbrack\)</span>, such that <span class="math inline">\(f(a).f(b)&lt;0\)</span></p></li>
+<li><p>Newton-Raphson method had quadratic convergence, but in case of bad choice of <span class="math inline">\(x_0\)</span>, Newton Raphson method may fail to converge.</p></li>
+<li><p>This method is useful in case of large value of <span class="math inline">\(f^{'}(x_{n})\)</span> i.e, when graph of <span class="math inline">\(f(x)\)</span> while crossing x-axis is nearly vertical.</p></li>
+</ul>
+<div id="examples-2" class="section level4" number="4.3.3.1">
+<h4>
+<span class="header-section-number">4.3.3.1</span> <strong>Examples</strong><a class="anchor" aria-label="anchor" href="#examples-2"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Example 1</strong></p>
+<p>Use Newton Raphson method to find a root of the equation <span class="math inline">\(x^{3} - 5x + 3 = 0\)</span> correct to three decimal places.</p>
+<p>Solution</p>
+<p><span class="math inline">\(f(x) = x^{3\ } - 5x + 3\)</span></p>
+<p><span class="math inline">\(f^{'}(x) = 3x^{2\ } - 5\)</span></p>
+<p>Here <span class="math inline">\(f(0) = 3\)</span>
+<span class="math inline">\(f(1) = -1\)</span></p>
+<p><span class="math inline">\(f(0).f(1)&lt;0\)</span></p>
+<p>Also f(x) is continuous in <span class="math inline">\(\left\lbrack 0,1 \right\rbrack\)</span>.</p>
+<p>Therefore atleast one root exists in <span class="math inline">\(\left\lbrack 0,1 \right\rbrack\)</span>.</p>
+<p><strong>Initial approximation</strong></p>
+<p>Let initial approximation <span class="math inline">\((x_0)\)</span> in the interval <span class="math inline">\(\left\lbrack 0,1 \right\rbrack\)</span> be 0.8</p>
+<p>By Newton-Raphson method
+<span class="math display">\[x_{n + 1\ } = x_{n} - \ \frac{f(x_{n})}{f^{'}(x_{n})}\]</span></p>
+<p><strong>First approximation</strong></p>
+<p><span class="math inline">\(x_{1}= x_{0} - \ \frac{f\left( x_{0} \right)}{f^{'}\left( x_{0} \right)}\)</span> ,where <span class="math inline">\(x_0 = 0.8\)</span></p>
+<p><span class="math inline">\(f\left( x_{0} \right) = f(0.8) = - 0.488\)</span>
+<span class="math inline">\(f'\left( x_{0} \right) = f'(0.8) = - 3.08\)</span></p>
+<p><span class="math inline">\(x_{1} = 0.8 - \ \frac{- 0.488}{- 3.08} = 0.6416\)</span></p>
+<p><strong>Second approximation</strong></p>
+<p><span class="math inline">\(x_{2} = x_{1} - \frac{f(x_{1})}{f^{'}(x_{1})}\)</span> , where <span class="math inline">\(x_1= 0.6415\)</span></p>
+<p><span class="math inline">\(f\left( x_{1} \right) = f(0.6416) = 0.0561\)</span>
+<span class="math inline">\(f'\left( x_{1} \right) = f(0.6416) = - 3.7650\)</span></p>
+<p><span class="math inline">\(x_{2} = 0.6416 - \ \frac{0.0561}{- 3.7650}= 0.6565\)</span></p>
+<p><strong>Third approximation</strong></p>
+<p><span class="math inline">\(x_{3} = x_{2} - \frac{f(x_{2})}{f^{'}(x_{2})}\)</span> , where <span class="math inline">\(x_2= 0.6565\)</span></p>
+<p><span class="math inline">\(f\left( x_{2} \right) = f(0.6565) = 0.0004\)</span>
+<span class="math inline">\(f'\left( x_{2} \right) = f(0.6565) = - 3.7070\)</span></p>
+<p><span class="math inline">\(x_{3} = 0.6565 - \ \frac{0.0004}{- 3.7070}= 0.6566\)</span></p>
+<p>Hence a root of the equation <span class="math inline">\(x^{3} - 5x + 3 = 0\ \)</span>correct to three decimal places is 0.6566.</p>
+<p><strong>Example 2</strong></p>
+<p>Find the approximate value of <span class="math inline">\(\sqrt{28}\)</span> correct to three decimal places using Newton Raphson method</p>
+<p><em>Solution</em></p>
+<p><span class="math display">\[x = \sqrt{28}\]</span></p>
+<p><span class="math display">\[x^{2\ } - 28 = 0\]</span></p>
+<p><span class="math inline">\(f(x) = x^{2\ } - 28\)</span></p>
+<p><span class="math display">\[f^{'}(x) = 2x\]</span></p>
+<p>Here <span class="math inline">\(f(5) = -3\)</span>
+<span class="math inline">\(f(6) = 8\)</span></p>
+<p><span class="math inline">\(f(5).f(6)&lt;0\)</span></p>
+<p>Also f(x) is continuous in <span class="math inline">\(\left\lbrack 5,6 \right\rbrack\)</span></p>
+<p>Therefore atleast one root exists in <span class="math inline">\(\left\lbrack 5,6 \right\rbrack\)</span></p>
+<p><strong>Initial approximation</strong></p>
+<p>Let initial approximation <span class="math inline">\((x_0)\)</span> in the interval <span class="math inline">\(\left\lbrack 5,6 \right\rbrack\)</span> be 5.5</p>
+<p>By Newton-Raphson method,</p>
+<p><span class="math inline">\(x_{n + 1\ } = x_{n} - \ \frac{f(x_{n})}{f^{'}(x_{n})}\)</span></p>
+<p><strong>First approximation</strong></p>
+<p><span class="math inline">\(x_{1} = x_{0} - \ \frac{f\left( x_{0} \right)}{f^{'}\left( x_{0} \right)}\)</span> ,where <span class="math inline">\(x_0 = 5.5\)</span></p>
+<p><span class="math inline">\(f\left( x_{0} \right) = f(5.5) = 2.25\)</span>
+<span class="math inline">\(f'\left( x_{0} \right) = f'(5.5) = 11\)</span></p>
+<p><span class="math inline">\(x_{1} = 5.5 - \frac{2.25}{11}= 5.2955\)</span></p>
+<p><strong>Second approximation</strong></p>
+<p><span class="math inline">\(x_{2} = x_{1} - \frac{f(x_{1})}{f^{'}(x_{1})}\)</span> , where <span class="math inline">\(x_1= 5.2955\)</span>
+<span class="math inline">\(f\left( x_{1} \right) = f(5.2955) = 0.0423\)</span>
+<span class="math inline">\(f'\left( x_{1} \right) = f(5.2955) = 10.591\)</span></p>
+<p><span class="math inline">\(x_{2} = 5.2955 - \ \frac{0.0423}{10.591}= 5.2915\)</span></p>
+<p><strong>Third approximation</strong></p>
+<p><span class="math inline">\(x_{3} = x_{2} - \frac{f(x_{2})}{f^{'}(x_{2})}\)</span> , where <span class="math inline">\(x_2= 5.2915\)</span></p>
+<p><span class="math inline">\(f\left( x_{2} \right) = f(5.2915) = - 0.00003\)</span>
+<span class="math inline">\(f'\left( x_{2} \right) = f(5.2915) = 10.583\)</span></p>
+<p><span class="math inline">\(x_{3} = 5.2915 - \frac{- 0.00003}{10.583}= 5.2915\)</span></p>
+<p>Hence value of <span class="math inline">\(\sqrt{28}\)</span> correct to three decimal places is 5.2915.</p>
+</div>
+</div>
+<div id="generalized-newtons-method-for-multiple-roots" class="section level3" number="4.3.4">
+<h3>
+<span class="header-section-number">4.3.4</span> <strong>Generalized Newton’s Method for Multiple Roots</strong><a class="anchor" aria-label="anchor" href="#generalized-newtons-method-for-multiple-roots"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Result:</strong> If <span class="math inline">\(𝛼\)</span> is a root of equation <span class="math inline">\(𝑓(𝑥) =0\)</span> with multiplicity 𝑚, then it is also a root of equation <span class="math inline">\(𝑓′(𝑥) =0\)</span> with multiplicity (𝑚−1) and also of the equation <span class="math inline">\(𝑓′′(𝑥) =0\)</span> with multiplicity (𝑚−1) and so on.</p>
+<p>For example:</p>
+<p><span class="math inline">\((𝑥−1)^3= 0\)</span> has ‘1’ as a root with multiplicity 3</p>
+<p><span class="math inline">\(3(𝑥−1)^2 = 0\)</span> has ‘1’ as the root with multiplicity 2</p>
+<p><span class="math inline">\(6(𝑥−1) = 0\)</span> has ‘1’ as the root with multiplicity 1</p>
+<p>∴ The expressions <span class="math inline">\(x_{n} - \ m\frac{f(x_{n})}{f^{'}(x_{n})},\)</span>
+<span class="math inline">\(x_{n} - \ (m - 1)\frac{f'(x_{n})}{f^{''}(x_{n})},\)</span> <span class="math inline">\(x_{n} - \ (m - 2)\frac{f''(x_{n})}{f^{'''}(x_{n})}\)</span> are equivalent.</p>
+<p>Generalized Newton’s method is used to find repeated roots of an equation as is given as:</p>
+<p>If <span class="math inline">\(𝛼\)</span> be a root of equation <span class="math inline">\(𝑓(𝑥) =0\)</span> which is repeated 𝑚 times,</p>
+<p>Then
+<span class="math inline">\({x_{n + 1} = \ x_{n} - m\frac{f(x_{n})}{f^{'}(x_{n})}}_{}\sim\ x_{n} - \ (m - 1)\frac{f'(x_{n})}{f^{''}(x_{n})}\)</span></p>
+<div id="example-2" class="section level4" number="4.3.4.1">
+<h4>
+<span class="header-section-number">4.3.4.1</span> <strong>Example</strong><a class="anchor" aria-label="anchor" href="#example-2"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Example 1</strong>
+Use Newton-Raphson method to find a double root of the equation <span class="math inline">\(𝑥^{3}−𝑥^{2}−𝑥+1=0\)</span> upto three iterations.</p>
+<p><strong>Solution:</strong></p>
+<p><span class="math inline">\(𝑓(𝑥) =𝑥^3−𝑥^2−𝑥+1\)</span>
+<span class="math inline">\(𝑓′(𝑥) =3𝑥^{2}−2𝑥−1\)</span>
+<span class="math inline">\(𝑓′′(𝑥)=6𝑥−2\)</span></p>
+<p>Let the initial approximation <span class="math inline">\(𝑥_0=0.7\)</span></p>
+<p><strong>First approximation:</strong></p>
+<p><span class="math inline">\(𝑥_1=𝑥_0−2\frac{f(x_{0})}{f^{'}(x_{0})}\)</span></p>
+<p>Also <span class="math inline">\(𝑥_1=𝑥_0−\frac{f^{'}(x_{0})}{f^{''}(x_{0})}\)</span></p>
+<p><span class="math inline">\(⇒𝑥_1=0.7−\frac{0.306}{- 0.93}=1.0290\)</span></p>
+<p>And <span class="math inline">\(𝑥_1=0.7-\frac{- 0.93}{2.2}=1.1227\)</span></p>
+<p><span class="math inline">\(∴𝑥_1=\frac{1.029+1.12272}{2}=1.0759\)</span>, <span class="math inline">\(𝑓(𝑥_1)=.012\)</span></p>
+<p><strong>Second approximation:</strong></p>
+<p><span class="math inline">\(𝑥_2=𝑥_1−\frac{2𝑓(𝑥_1)}{𝑓′(𝑥_1)}\)</span>
+Also <span class="math inline">\(𝑥_2=𝑥_1−\frac{𝑓′(𝑥_1)}{𝑓′′(𝑥_1)}\)</span></p>
+<p><span class="math inline">\(⇒𝑥_2=1.0759−\frac{0.0239}{0.3209}=1.001\)</span> And <span class="math inline">\(𝑥_2=1.0759−\frac{0.3209}{4.4554}=1.004\)</span></p>
+<p><span class="math inline">\(∴𝑥_2=\frac{1.001+1.0042}{2}=1.0025\)</span>, <span class="math inline">\(𝑓(𝑥_2)=.00001\)</span></p>
+<p><strong>Third approximation:</strong></p>
+<p><span class="math inline">\(𝑥_3=𝑥_2−\frac{2𝑓(𝑥_2)}{𝑓′(𝑥_2)}\)</span>
+Also <span class="math inline">\(𝑥_3=𝑥_2−\frac{𝑓′(𝑥_2)}{𝑓′′ (𝑥_2)}\)</span></p>
+<p>⇒<span class="math inline">\(𝑥_3=1.0025−\frac{0.00003}{0.0100}=0.995\)</span> And <span class="math inline">\(𝑥_3=1.0025−\frac{0.0100}{4.015}=1.0000\)</span></p>
+<p><span class="math inline">\(∴𝑥_3=\frac{0.995+1.000}{2}=0.9975\)</span>, <span class="math inline">\(𝑓(𝑥_3)=.00001\)</span></p>
+<p>The double root of the equation <span class="math inline">\(𝑥^{3}−𝑥^{2}−𝑥+1=0\)</span> after three iterations is 0.9975.</p>
+
+</div>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="homogeneous-function.html"><span class="header-section-number">3</span> Homogeneous Function</a></div>
+<div class="next"><a href="references.html"><span class="header-section-number">5</span> References</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#numerical-methods-for-solving-algebraic-and-transcendental-equations"><span class="header-section-number">4</span> NUMERICAL METHODS FOR SOLVING ALGEBRAIC AND TRANSCENDENTAL EQUATIONS</a></li>
+<li>
+<a class="nav-link" href="#introduction-1"><span class="header-section-number">4.1</span> Introduction</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#some-useful-results"><span class="header-section-number">4.1.1</span> Some useful results</a></li></ul>
+</li>
+<li><a class="nav-link" href="#methods-for-finding-the-root"><span class="header-section-number">4.2</span> Methods for finding the root</a></li>
+<li>
+<a class="nav-link" href="#numerical-methods-for-finding-root"><span class="header-section-number">4.3</span> Numerical Methods for finding root</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#bisection-method-or-bolzano-method"><span class="header-section-number">4.3.1</span> Bisection Method (or Bolzano Method)</a></li>
+<li><a class="nav-link" href="#regular-false-method"><span class="header-section-number">4.3.2</span> Regular False Method</a></li>
+<li><a class="nav-link" href="#newton-raphson-method"><span class="header-section-number">4.3.3</span> Newton Raphson Method</a></li>
+<li><a class="nav-link" href="#generalized-newtons-method-for-multiple-roots"><span class="header-section-number">4.3.4</span> Generalized Newton’s Method for Multiple Roots</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BIOMATHEMATICS</strong>" was written by Dr. Pratheesh P. Gopinath. It was last built on 2022-01-30.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

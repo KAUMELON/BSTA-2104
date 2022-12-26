@@ -1,6 +1,8 @@
 fig:secant
 fig:meanval
 fig:roll
+fig:softw1
+fig:softw2
 introduction
 tangent-and-secant
 theorems
@@ -19,4 +21,18 @@ question-1.
 question-2.
 eulers-theorem
 question-1.-1
+numerical-methods
+introduction-1
+some-useful-results
+methods-for-finding-the-root
+numerical-methods-for-finding-root
+bisection-method-or-bolzano-method
+algorithm
+examples
+regular-false-method
+examples-1
+newton-raphson-method
+examples-2
+generalized-newtons-method-for-multiple-roots
+example-2
 references

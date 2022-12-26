@@ -1,7 +1,7 @@
 
 # Homogeneous Function
 
-The function $f(x,y)$; if it can be expressed by writing $x = kx$ and $y = ky$ to form a function $f(kx,ky)= k^{2} f(x,y)$, such that constant $k$ can be taken as the $n^{th}$ power of exponent , it is called as homogeneous function of degree $n$. Here $n$ is called as the *degree of homogeneity*.
+The function $f(x,y)$; if it can be expressed by writing $x = kx$ and $y = ky$ to form a function $f(kx,ky)= k^{n} f(x,y)$, such that constant $k$ can be taken as the $n^{th}$ power of exponent , it is called as homogeneous function of degree $n$. Here $n$ is called as the *degree of homogeneity*.
 
 > Example 3.1: Verify $f(x,y)$ is a homogeneous function.
 

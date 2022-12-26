@@ -1,6 +1,6 @@
 ---
 title: "BIOMATHEMATICS"
-author: "Dr. Pratheesh P. Gopinath"
+author: "Dr. Pratheesh P. Gopinath & Shilpa S Nair"
 date: "2022-01-30"
 site: bookdown::bookdown_site
 documentclass: book
